@@ -15,5 +15,11 @@ class Addition1Test {
 		assertEquals(expected, actual,"this should add two numbers");
 		
 	}
+	
+	@Test
+	void testcomputeCircleArea() {
+		Addition1 ad=new Addition1();
+		assertEquals(314.1592653589793,ad.computeCircleArea(10),"should return right circle area");
+	}
 
 }
