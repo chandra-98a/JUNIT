@@ -7,8 +7,13 @@ import org.junit.jupiter.api.Test;
 class Addition1Test {
 
 	@Test
-	void test() {
-		fail("Not yet implemented"); // TODO
+	
+	void testadd() {
+		Addition1 ad=new Addition1();
+		int expected=2;
+		int actual=ad.add(1,1);
+		assertEquals(expected, actual,"this should add two numbers");
+		
 	}
 
 }
