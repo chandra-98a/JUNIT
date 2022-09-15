@@ -17,6 +17,12 @@ class Addition1Test {
 	}
 	
 	@Test
+	void testDivide() {
+		Addition1 ad=new Addition1();
+		assertThrows(ArithmeticException.class,()->ad.divide(1, 0),"divide by zero should be thrown");
+	}
+	
+	@Test
 	void testcomputeCircleArea() {
 		Addition1 ad=new Addition1();
 		assertEquals(314.1592653589793,ad.computeCircleArea(10),"should return right circle area");
