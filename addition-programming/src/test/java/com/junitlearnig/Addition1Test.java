@@ -46,7 +46,9 @@ class  Addition1Test{
 	@Test
 	@DisplayName("Positive")
 	void testAddPositive() {
-		assertEquals(2,ad.add(1, 1),"should return positive result");
+		int expected=2;
+		int actual=ad.add(11, 1);
+		assertEquals(expected,actual,"should return positive result"+expected+"but return"+actual);
 	}
 	@Test
 	@DisplayName("Negetive")
