@@ -1,6 +1,7 @@
 package com.junitlearnig;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -36,11 +38,29 @@ class  Addition1Test{
 		assertEquals(expected, actual,"this should add two numbers");
 		
 	}
-
+	
+	
+	@Nested
+	@DisplayName("add class")
+    class AddTest{
+	@Test
+	@DisplayName("Positive")
+	void testAddPositive() {
+		assertEquals(2,ad.add(1, 1),"should return positive result");
+	}
+	@Test
+	@DisplayName("Negetive")
+	void testAddNegetive() {
+		assertEquals(-2,ad.add(-1, -1),"should return negative result");
+	}
+}
+	
+	
 	@Test
 	@DisplayName("testing divide method")
 	void testDivide() {
-		
+		boolean isServerUp=true;
+		assumeTrue(isServerUp);
 		assertThrows(ArithmeticException.class,()->ad.divide(1, 0),"divide by zero should be thrown");
 	}
 	
