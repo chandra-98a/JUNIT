@@ -55,6 +55,19 @@ class  Addition1Test{
 	}
 }
 	
+	@Test
+	@DisplayName("testing multiply method")
+	void testMultiply() {
+		assertEquals(4,ad.multiply(2, 2));
+		assertAll(
+				()->assertEquals(6,ad.multiply(3, 2)),
+				()->assertEquals(0,ad.multiply(1, 0)),
+				()->assertEquals(1,ad.multiply(1, 1))
+				);
+	}
+	
+	
+	
 	
 	@Test
 	@DisplayName("testing divide method")
